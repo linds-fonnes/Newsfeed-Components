@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Lindsey Earns a Gold Star for Trying to Be a Really Good Web Developer!',
+    date: 'December 2nd, 2020',
+    firstParagraph: 'Culture realm of the galaxies as a patch of light a mote of dust suspended in a sunbeam Flatland two ghostly white figures in coveralls and helmets are softly dancing? Extraordinary claims require extraordinary evidence permanence of the stars rich in mystery concept of the number one of brilliant syntheses paroxysm of global death. Intelligent beings vanquish the impossible courage of our questions a very small stage in a vast cosmic arena are creatures of the cosmos something incredible is waiting to be known and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+    secondParagraph: 'From which we spring circumnavigated vanquish the impossible the carbon in our apple pies dispassionate extraterrestrial observer cosmic ocean? Citizens of distant epochs across the centuries intelligent beings birth gathered by gravity vastness is bearable only through love? Star stuff harvesting star light extraordinary claims require extraordinary evidence across the centuries two ghostly white figures in coveralls and helmets are softly dancing a still more glorious dawn awaits extraordinary claims require extraordinary evidence.',
+    thirdParagraph: 'Of brilliant syntheses preserve and cherish that pale blue dot citizens of distant epochs hearts of the stars encyclopaedia galactica galaxies. How far away stirred by starlight Sea of Tranquility vastness is bearable only through love Orions sword a very small stage in a vast cosmic arena. Extraordinary claims require extraordinary evidence bits of moving fluff rich in mystery network of wormholes with pretty stories for which theres little good evidence network of wormholes and billions upon billions upon billions upon billions upon billions upon billions upon billions.'
   }
 ];
 
@@ -103,6 +110,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
+
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
@@ -114,3 +122,47 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const theArticles = document.querySelector('.articles');
+function articleMaker(articles) {
+  
+  const theArticle = document.createElement('div');
+  const theTitle = document.createElement('h2');
+  const theDate = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const theButton = document.createElement('span');
+
+
+theArticles.appendChild(theArticle);
+theArticle.appendChild(theTitle);
+theArticle.appendChild(theDate);
+theArticle.appendChild(paragraphOne);
+theArticle.appendChild(paragraphTwo);
+theArticle.appendChild(paragraphThree);
+theArticle.appendChild(theButton);
+
+theArticle.classList.add('article');
+theDate.classList.add('date');
+theButton.classList.add('expandButton');
+
+theTitle.textContent = articles.title;
+theDate.textContent = articles.date;
+paragraphOne.textContent = articles.firstParagraph;
+paragraphTwo.textContent = articles.secondParagraph;
+paragraphThree.textContent = articles.thirdParagraph;
+theButton.textContent = '+';
+
+theButton.addEventListener('click', (event) => {
+  theArticle.classList.toggle('article-open')
+})
+
+return theArticle;
+}
+
+const pageElements = data.map((data) =>{
+  return articleMaker(data);
+});
+pageElements.forEach((pageElement) => {
+theArticles.appendChild(pageElement );
+})
