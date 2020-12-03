@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Lindsey Earns a Gold Star for Trying to Be a Really Good Web Developer!',
+    date: 'December 2nd, 2020',
+    firstParagraph: 'Culture realm of the galaxies as a patch of light a mote of dust suspended in a sunbeam Flatland two ghostly white figures in coveralls and helmets are softly dancing? Extraordinary claims require extraordinary evidence permanence of the stars rich in mystery concept of the number one of brilliant syntheses paroxysm of global death. Intelligent beings vanquish the impossible courage of our questions a very small stage in a vast cosmic arena are creatures of the cosmos something incredible is waiting to be known and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+    secondParagraph: 'From which we spring circumnavigated vanquish the impossible the carbon in our apple pies dispassionate extraterrestrial observer cosmic ocean? Citizens of distant epochs across the centuries intelligent beings birth gathered by gravity vastness is bearable only through love? Star stuff harvesting star light extraordinary claims require extraordinary evidence across the centuries two ghostly white figures in coveralls and helmets are softly dancing a still more glorious dawn awaits extraordinary claims require extraordinary evidence.',
+    thirdParagraph: 'Of brilliant syntheses preserve and cherish that pale blue dot citizens of distant epochs hearts of the stars encyclopaedia galactica galaxies. How far away stirred by starlight Sea of Tranquility vastness is bearable only through love Orions sword a very small stage in a vast cosmic arena. Extraordinary claims require extraordinary evidence bits of moving fluff rich in mystery network of wormholes with pretty stories for which theres little good evidence network of wormholes and billions upon billions upon billions upon billions upon billions upon billions upon billions.'
   }
 ];
 
@@ -157,5 +164,5 @@ const pageElements = data.map((data) =>{
   return articleMaker(data);
 });
 pageElements.forEach((pageElement) => {
-theArticles.appendChild(pageElement);
+theArticles.appendChild(pageElement );
 })
